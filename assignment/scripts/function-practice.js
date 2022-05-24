@@ -6,8 +6,10 @@ console.log('***** Function Practice *****')
 
 // 1. Function to return 'Hello World!'
 function hello() {
-  return 'Hello World!';
+  const greeting = 'Hello World!';
+  return greeting;
 }
+
 // Call the function to test
 console.log('Test - should say "Hello World!"', hello());
 
@@ -15,15 +17,19 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  console.log(`Hello`,name,`!`);
+  return name;
 }
+helloName('Rickie');
 // Remember to call the function to test
 
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+function addNumbers( firstNumber, secondNumber ) {
+  return firstNumber + secondNumber;
   // return firstNumber + secondNumber;
 }
+console.log('in addNumbers', addNumbers(10,5));
 
 
 // 4. Function to multiply three numbers & return the result
