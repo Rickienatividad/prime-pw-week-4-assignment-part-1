@@ -72,14 +72,21 @@ console.log('last item in our array is', getLast(exampleArray));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 let arrayTwo = [15,25,30,35,40,45,50];
-let givenValue;
 function find( value, array ){
-  for(let i=0; i<arrayTwo.length; i++){
-    console.log(arrayTwo[i]);
-    
+  for(num of array){
+    console.log('number is:',num);
+    if(num === value){
+      console.log('number is a match');
+      return true;
+    }
+  }
+  for(num of array){
+    if(num != value){
+      return false;
+    }
   }
 }
-find();
+console.log(find(30,arrayTwo));
 
 
 // ----------------------
