@@ -74,9 +74,9 @@ console.log('last item in our array is', getLast(exampleArray));
 let arrayTwo = [15,25,30,35,40,45,50];
 function find( value, array ){
   for(num of array){
-    console.log('number is:',num);
+    //console.log('number is:',num);
     if(num === value){
-      console.log('number is a match');
+      //console.log('number is a match');
       return true;
     }
   }
@@ -86,7 +86,7 @@ function find( value, array ){
     }
   }
 }
-console.log(find(30,arrayTwo));
+console.log(find(15,arrayTwo));
 
 
 // ----------------------
@@ -126,12 +126,26 @@ function sumAll(startingPoint) {
   console.log(`sum of the array is `,sum);
   return sum;
 }
-sumAll(30);
+console.log(`testing sumAll by building an array with a given starting point and then adding the contents together`,sumAll(30));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+let inputArray = [13,19,22,8,4,82,24,28,42,33,27,99];
+let oddArray = [1,3,5,7,9];
+function evenArray(array){
+  let emptyArray = [];
+  let newArray = [];
+  for(num of array){
+    if(num % 2 ===0){
+      newArray.push(num);
+    }
+  }
+  if(newArray.length > 0){
+    console.log(newArray);
+  }else console.log(emptyArray);
+}
+evenArray(inputArray);
+evenArray(oddArray);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
