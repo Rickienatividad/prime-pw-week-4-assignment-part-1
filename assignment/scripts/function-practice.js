@@ -126,10 +126,10 @@ function sumAll(startingPoint) {
   for(let num of array){
     sum += num;
   }
-  console.log(`sum of the array is `,sum);
+  //console.log(`sum of the array is `,sum);
   return sum;
 }
-console.log(`testing sumAll by building an array with a given starting point and then adding the contents together`,sumAll(30));
+console.log(`built an array with loop and finding the sum with sumAll`,sumAll(30));
 
 
 // 10. Function to return a new array of all positive (greater than zero)
