@@ -17,8 +17,8 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  console.log(`Hello`,name,`!`);
-  return name;
+  let greeting = console.log(`Hello`,name,`!`);
+  return greeting;
 }
 helloName('Rickie');
 // Remember to call the function to test
@@ -36,7 +36,7 @@ console.log('in addNumbers', addNumbers(30,7));
 function multiplyThree( num1, num2, num3 ){
   return num1 * num2 * num3;
 }
-console.log(`in multiplyThree`,multiplyThree(8,10,10));
+console.log(`in multiplyThree`,multiplyThree(8,10,2));
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
@@ -46,7 +46,7 @@ function isPositive( number ) {
   }else
     return false;
 }
-console.log(isPositive(1));
+console.log('in isPositive', isPositive(1));
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
@@ -58,14 +58,16 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 //    array is empty, return `undefined`.
 let exampleArray = [3,5,7,9,11,13,15,17];
 function getLast(array) {
-  if(exampleArray.length > 0){
-    let the_last_item = exampleArray[exampleArray.length -1];
+  if(array.length > 0){
+    let the_last_item = array[array.length -1];
     return the_last_item;
   }else{
     return 'undefined';
   }
 }
-console.log('last item in our array is', getLast(exampleArray));
+console.log('in getLast: the last item in our array is', getLast(exampleArray));
+let secondExampleArray = [];
+console.log('testing getLast with an empty array', getLast(secondExampleArray));
 
 
 // 7. Function to find a value in an array. Return true if the 
@@ -73,14 +75,14 @@ console.log('last item in our array is', getLast(exampleArray));
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 let arrayTwo = [15,25,30,35,40,45,50];
 function find( value, array ){
-  for(num of array){
+  for(let num of array){
     //console.log('number is:',num);
     if(num === value){
       //console.log('number is a match');
       return true;
     }
   }
-  for(num of array){
+  for(let num of array){
     if(num != value){
       return false;
     }
@@ -111,6 +113,7 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 // 9. Function to return the sum of all numbers in an array
 function sumAll(startingPoint) {
   let sum = 0;
+// TODO: loop to add items
   let filler = 30;
   let array = [];
   array.push(startingPoint);
@@ -120,32 +123,38 @@ function sumAll(startingPoint) {
     array.push(15,20,25);
   }
   console.log(array);
-  for(num of array){
+  for(let num of array){
     sum += num;
   }
   console.log(`sum of the array is `,sum);
   return sum;
 }
 console.log(`testing sumAll by building an array with a given starting point and then adding the contents together`,sumAll(30));
+
+
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-let inputArray = [13,19,22,8,4,82,24,28,42,33,27,99];
-let oddArray = [1,3,5,7,9];
-function evenArray(array){
+let inputArray = [13,-19,22,-8,4,-82,24,-28,42,-33,27,-99];
+let negArray = [-1,-3,-5,-7];
+function posArray(array){
   let emptyArray = [];
   let newArray = [];
-  for(num of array){
-    if(num % 2 ===0){
+  for(let num of array){
+    if(num > 0){
       newArray.push(num);
     }
   }
-  if(newArray.length > 0){
-    console.log(newArray);
-  }else console.log(emptyArray);
+  if(newArray.length > emptyArray.length){
+    return newArray;
+  }else{
+    return emptyArray;
+  }
 }
-evenArray(inputArray);
-evenArray(oddArray);
+console.log(`in positive array function: testing 1:`,posArray(inputArray));
+console.log(`in positive array function: testing 2(no positives):`,posArray(negArray));
+
+
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
